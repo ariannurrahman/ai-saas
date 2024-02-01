@@ -4,15 +4,8 @@ import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
-import { Tektur } from 'next/font/google';
 
 import { ROUTES } from '@/constants';
-
-const tektur = Tektur({
-  display: 'swap',
-  subsets: ['latin'],
-  variable: '--font-tektur',
-});
 
 export const Sidebar = () => {
   const pathname = usePathname();
@@ -24,7 +17,7 @@ export const Sidebar = () => {
           <div className='relative w-10 h-10 mr-4'>
             <Image alt='extreme logo' fill src='/an-logo.svg' />
           </div>
-          <h1 className={cn('font-bold text-2xl', tektur.className)}>Extreme</h1>
+          <h1 className='font-bold text-2xl font-roboto'>Extreme</h1>
         </Link>
         <div className='space-y-1'>
           {ROUTES.map((route) => {

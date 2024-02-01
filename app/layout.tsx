@@ -1,10 +1,19 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Open_Sans, Roboto } from 'next/font/google';
 import { ClerkProvider } from '@clerk/nextjs';
 import './globals.css';
-// import Script from 'next/script';
 
-const inter = Inter({ subsets: ['latin'] });
+const openSans = Open_Sans({
+  display: 'swap',
+  subsets: ['latin'],
+  variable: '--font-open-sans',
+});
+const roboto = Roboto({
+  display: 'swap',
+  weight: ['500', '700'],
+  subsets: ['latin'],
+  variable: '--font-roboto',
+});
 
 export const metadata: Metadata = {
   title: 'Extreme',
@@ -19,8 +28,7 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang='en'>
-        <body className={inter.className}>{children}</body>
-        {/* <Script src='https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs' /> */}
+        <body className={`${roboto.variable} ${openSans.variable}`}>{children}</body>
       </html>
     </ClerkProvider>
   );
