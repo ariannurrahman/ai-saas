@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang='en'>
-        <body className={`${roboto.variable} ${openSans.variable}`}>{children}</body>
+        <body className={`${roboto.variable} ${openSans.className}`}>{children}</body>
       </html>
     </ClerkProvider>
   );
